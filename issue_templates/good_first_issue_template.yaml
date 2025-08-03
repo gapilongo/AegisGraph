@@ -1,0 +1,38 @@
+name: Good First Issue
+about: Create a beginner-friendly task
+title: '[GOOD FIRST ISSUE] '
+labels: good-first-issue
+assignees: ''
+
+---
+
+**Description**
+Brief description of what needs to be done.
+
+**Skills Required**
+- [ ] Python basics
+- [ ] Testing knowledge
+- [ ] Documentation writing
+- [ ] Other: ___
+
+**Files to Work On**
+List the specific files that need changes.
+
+**Detailed Tasks**
+- [ ] Task 1
+- [ ] Task 2
+- [ ] Task 3
+
+**Resources**
+- Link to relevant documentation
+- Example code or similar implementations
+- Contact person for questions
+
+**Acceptance Criteria**
+- [ ] Criteria 1
+- [ ] Criteria 2
+- [ ] All tests pass
+- [ ] Code review completed
+
+**Estimated Time**
+2-4 hours for a beginner
