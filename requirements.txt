@@ -1,0 +1,19 @@
+# LangGraph and LangChain
+langgraph
+langchain-core
+langchain-community
+
+# Data validation and serialization
+pydantic
+python-dateutil
+
+# Testing and development
+pytest
+pytest-cov
+pytest-benchmark
+
+# Performance monitoring
+memory-profiler
+
+# Logging
+structlog
