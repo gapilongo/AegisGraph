@@ -17,3 +17,12 @@ memory-profiler
 
 # Logging
 structlog
+
+# File watching for hot-reload
+watchdog
+
+# Credential management providers (optional)
+hvac
+boto3
+azure-identity
+azure-keyvault-secrets

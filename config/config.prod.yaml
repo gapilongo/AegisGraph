@@ -1,0 +1,79 @@
+# config/config.prod.yaml
+environment: prod
+debug: false
+log_level: INFO
+
+database:
+  host: ${SOC_DB_HOST}
+  port: ${SOC_DB_PORT}
+  database: ${SOC_DB_NAME}
+  username: ${SOC_DB_USER}
+  password: ${secret:DB_PASSWORD}
+  ssl_mode: require
+  pool_size: 20
+  max_overflow: 50
+
+redis:
+  host: ${SOC_REDIS_HOST}
+  port: ${SOC_REDIS_PORT}
+  database: 0
+  password: ${secret:REDIS_PASSWORD}
+  ssl: true
+
+security:
+  encryption_key_id: ${secret:ENCRYPTION_KEY}
+  token_expiry_hours: 24
+  allowed_origins:
+    - https://soc.company.com
+    - https://dashboard.company.com
+  jwt_algorithm: RS256
+  password_min_length: 12
+  session_timeout_minutes: 30
+
+performance:
+  max_concurrent_agents: 50
+  agent_timeout_seconds: 300
+  state_cache_ttl_seconds: 3600
+  batch_processing_size: 200
+  memory_limit_mb: 2048
+
+notifications:
+  slack_webhook_url: ${secret:SLACK_WEBHOOK}
+  email_smtp_host: ${SOC_SMTP_HOST}
+  email_smtp_port: 587
+  email_use_tls: true
+  pagerduty_integration_key: ${secret:PAGERDUTY_KEY}
+  notification_rate_limit: 100
+
+siem_connections:
+  prod_splunk:
+    type: splunk
+    endpoint: ${SPLUNK_ENDPOINT}
+    auth_method: oauth
+    timeout_seconds: 60
+    rate_limit_rps: 20.0
+    batch_size: 500
+  
+  prod_sentinel:
+    type: sentinel
+    endpoint: ${SENTINEL_ENDPOINT}
+    auth_method: oauth
+    timeout_seconds: 45
+    rate_limit_rps: 15.0
+    batch_size: 200
+  
+  prod_qradar:
+    type: qradar
+    endpoint: ${QRADAR_ENDPOINT}
+    auth_method: api_token
+    timeout_seconds: 90
+    rate_limit_rps: 10.0
+    batch_size: 100
+
+# Feature flags
+enable_learning_agent: true
+enable_auto_response: true
+enable_metrics_collection: true
+enable_state_persistence: true
+
+config_version: "1.0.0"
