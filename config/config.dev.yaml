@@ -1,0 +1,71 @@
+# config/config.dev.yaml
+environment: dev
+debug: true
+log_level: DEBUG
+
+database:
+  host: localhost
+  port: 5432
+  database: soc_framework_dev
+  username: soc_user
+  password: ${secret:DB_PASSWORD}
+  ssl_mode: disable
+  pool_size: 5
+  max_overflow: 10
+
+redis:
+  host: localhost
+  port: 6379
+  database: 0
+  password: null
+  ssl: false
+
+security:
+  encryption_key_id: ${secret:DEV_ENCRYPTION_KEY}
+  token_expiry_hours: 168  # 7 days for dev
+  allowed_origins:
+    - http://localhost:3000
+    - http://127.0.0.1:3000
+  jwt_algorithm: HS256
+  password_min_length: 8
+  session_timeout_minutes: 120
+
+performance:
+  max_concurrent_agents: 5
+  agent_timeout_seconds: 600  # 10 minutes for dev
+  state_cache_ttl_seconds: 1800  # 30 minutes
+  batch_processing_size: 25
+  memory_limit_mb: 512
+
+notifications:
+  slack_webhook_url: ${secret:SLACK_WEBHOOK_DEV}
+  email_smtp_host: localhost
+  email_smtp_port: 1025  # MailHog for dev
+  email_use_tls: false
+  pagerduty_integration_key: null
+  notification_rate_limit: 1000
+
+siem_connections:
+  test_splunk:
+    type: splunk
+    endpoint: http://localhost:8089
+    auth_method: api_token
+    timeout_seconds: 30
+    rate_limit_rps: 5.0
+    batch_size: 50
+  
+  test_elastic:
+    type: elastic
+    endpoint: http://localhost:9200
+    auth_method: basic_auth
+    timeout_seconds: 20
+    rate_limit_rps: 10.0
+    batch_size: 100
+
+# Feature flags
+enable_learning_agent: true
+enable_auto_response: false
+enable_metrics_collection: true
+enable_state_persistence: true
+
+config_version: "1.0.0"

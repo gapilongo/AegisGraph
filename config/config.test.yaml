@@ -1,0 +1,62 @@
+# config/config.test.yaml
+environment: test
+debug: true
+log_level: DEBUG
+
+database:
+  host: localhost
+  port: 5433  # Different port for test
+  database: soc_framework_test
+  username: test_user
+  password: test_password
+  ssl_mode: disable
+  pool_size: 3
+  max_overflow: 5
+
+redis:
+  host: localhost
+  port: 6380  # Different port for test
+  database: 1
+  password: null
+  ssl: false
+
+security:
+  encryption_key_id: test_encryption_key_12345
+  token_expiry_hours: 1  # Short expiry for tests
+  allowed_origins:
+    - http://localhost:*
+  jwt_algorithm: HS256
+  password_min_length: 6
+  session_timeout_minutes: 60
+
+performance:
+  max_concurrent_agents: 3
+  agent_timeout_seconds: 60
+  state_cache_ttl_seconds: 300
+  batch_processing_size: 10
+  memory_limit_mb: 256
+
+notifications:
+  slack_webhook_url: null
+  email_smtp_host: null
+  email_smtp_port: 587
+  email_use_tls: false
+  pagerduty_integration_key: null
+  notification_rate_limit: 10000  # High limit for tests
+
+siem_connections:
+  mock_splunk:
+    type: splunk
+    endpoint: http://mock-splunk:8089
+    auth_method: api_token
+    timeout_seconds: 10
+    rate_limit_rps: 100.0  # High for tests
+    batch_size: 10
+
+# Feature flags
+enable_learning_agent: false  # Disable for faster tests
+enable_auto_response: false
+enable_metrics_collection: false
+enable_state_persistence: false
+
+config_version: "1.0.0"
