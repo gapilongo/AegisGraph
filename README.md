@@ -95,25 +95,25 @@ We're looking for contributors passionate about:
 
 ## 🗺 Roadmap
 
-### Phase 1: Foundation (Q1 2024)
+### Phase 1: Foundation (Q3 2025)
 - [ ] Core state management system
 - [ ] Ingestion and Triage agents
 - [ ] Basic SIEM integration
 - [ ] Initial decision logic
 
-### Phase 2: Intelligence (Q2 2024)
+### Phase 2: Intelligence (Q3 2025)
 - [ ] Correlation agent with historical analysis
 - [ ] Analysis agent with ReAct loop
 - [ ] Threat intelligence integration
 - [ ] Human-in-the-loop system
 
-### Phase 3: Automation (Q3 2024)
+### Phase 3: Automation (Q1 2026)
 - [ ] Response agent with EDR integration
 - [ ] Learning agent with feedback loop
 - [ ] Performance optimization
 - [ ] Comprehensive testing
 
-### Phase 4: Production (Q4 2024)
+### Phase 4: Production (Q2 2026)
 - [ ] Deployment guides
 - [ ] Monitoring and observability
 - [ ] Advanced UI components
