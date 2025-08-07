@@ -1,8 +1,12 @@
 import json
 import logging
+import os
+import sys
 import uuid
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
 
 from core.exceptions import (
     StateSerializationError,
