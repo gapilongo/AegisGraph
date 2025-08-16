@@ -148,4 +148,3 @@ class TriageAgent(BaseAgent):
             return TriageStatus.TRIAGED  # Needs further analysis
         else:
             return TriageStatus.IN_PROGRESS  # Uncertain, continue processing
-            return TriageStatus.IN_PROGRESS  # Uncertain, continue processing

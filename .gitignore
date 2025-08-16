@@ -1,5 +1,6 @@
 .*
 !.gitignore
+!.env.example
 aa.md
 __pycache__/
 *.pyc

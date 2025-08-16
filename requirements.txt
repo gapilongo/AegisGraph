@@ -14,15 +14,32 @@ pytest-benchmark
 
 # Performance monitoring
 memory-profiler
+psutil
 
-# Logging
-structlog
+# Structured logging (NEW)
+structlog>=23.1.0
+colorama  # For colored console output
 
 # File watching for hot-reload
 watchdog
 
+# HTTP requests for centralized logging (NEW)
+requests
+
+# Environment variable loading (NEW)
+python-dotenv
+
 # Credential management providers (optional)
-hvac
-boto3
+hvac  # HashiCorp Vault
+boto3  # AWS Secrets Manager
 azure-identity
 azure-keyvault-secrets
+
+# JSON handling improvements (NEW)
+orjson  # Fast JSON serialization (optional, fallback to json)
+
+# Additional logging enhancements (NEW)
+python-json-logger  # Alternative JSON formatter
+loguru  # Alternative logging library (optional)
+
+colorama  # For colored console output
